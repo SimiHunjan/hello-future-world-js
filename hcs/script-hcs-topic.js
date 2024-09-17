@@ -34,6 +34,8 @@ async function scriptHcsTopic() {
   }
   const operatorId = AccountId.fromString(operatorIdStr);
   const operatorKey = PrivateKey.fromStringECDSA(operatorKeyStr);
+
+  // The client operator ID and key is the account that will be automatically set to pay for the transaction fees for each transaction
   client = Client.forTestnet().setOperator(operatorId, operatorKey);
   logger.log('Using account:', operatorIdStr);
 
